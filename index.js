@@ -1,14 +1,20 @@
 const cookie = document.querySelector('.cookie');
 const scoreScore = document.querySelector('.score');
 const autoClick = document.querySelector('.autoClick');
+const clickMult = document.querySelector('.ClickMultiplier');
 const autoButton = document.querySelector('.auto');
 const cost = document.querySelector('.cost');
+const costMutiplier = document.querySelector('.costMutiplier')
+const clickerButton = document.querySelector('.Multiplier');
 
 
 let score = 0;
-let autoB = 10;
+let autoB = 100;
+let click = 10;
 let autoPrice = 0;
 let autoClickTrack = 2000;
+let clickers = 0;
+let clickerTrack = 0;
 
 function autoClicker(){
 
@@ -27,9 +33,26 @@ function autoBuy(){
     autoClick.innerHTML = `Auto Click ${autoPrice} `;
    score = score - autoB;
    scoreScore.innerHTML = ` Clicks: ${score} `;
-     autoB = autoB + 5;
+     autoB = autoB + 50;
      cost.innerHTML = `Cost: ${autoB} `;
+     clickers++;
       autoClicker();
+  }
+  else{
+    alert("You do not have enought clicks!");
+  }
+}
+function clickerMulti(){
+  if(score >= click ){
+
+    clickerTrack++;
+    clickMult.innerHTML = `Clciker Multiplier ${clickerTrack}x `;
+   score = score - click;
+   scoreScore.innerHTML = ` Clicks: ${score} `;
+     click = click + 10;
+     costMutiplier.innerHTML = `Cost: ${click} `;
+     clickers++;
+
   }
   else{
     alert("You do not have enought clicks!");
@@ -38,6 +61,7 @@ function autoBuy(){
 
 function handleClick(){
  score++;
+ score = score + clickers;
  scoreScore.innerHTML = ` Clicks: ${score} `;
 
 
@@ -45,3 +69,4 @@ function handleClick(){
 
 cookie.addEventListener('click', handleClick);
 autoButton.addEventListener('click', autoBuy);
+clickerButton.addEventListener('click', clickerMulti);
