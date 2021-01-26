@@ -15,7 +15,7 @@ function autoBuy(){
 
     autoPrice++;
     autoClick.innerHTML = `Auto Click ${autoPrice} `;
-   score = autoB - score;
+   score = score - autoB;
    scoreScore.innerHTML = ` Clicks: ${score} `;
      autoB = autoB + 5;
      cost.innerHTML = `Cost: ${autoB} `;
