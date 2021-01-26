@@ -26,16 +26,19 @@ function autoClicker(){
 
 }
 
+function updateStatus(){
+  autoPrice++;
+  autoClick.innerHTML = `Auto Click: ${autoPrice} `;
+ score = score - autoB;
+ scoreScore.innerHTML = ` Clicks: ${score} `;
+   autoB = autoB + 50;
+   cost.innerHTML = `Cost: ${autoB} `;
+
+}
 function autoBuy(){
   if(score >= autoB ){
 
-    autoPrice++;
-    autoClick.innerHTML = `Auto Click ${autoPrice} `;
-   score = score - autoB;
-   scoreScore.innerHTML = ` Clicks: ${score} `;
-     autoB = autoB + 50;
-     cost.innerHTML = `Cost: ${autoB} `;
-     clickers++;
+      updateStatus();
       autoClicker();
   }
   else{

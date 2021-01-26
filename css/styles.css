@@ -8,6 +8,18 @@ h1{
   text-align: center;
   /* padding-top: 3%; */
 }
+.borderBox{
+  background-color: green;
+  width: 20%;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  text-align: center;
+}
+button{
+  width: 70px;
+
+       height: 30px;
+}
 .image{
 
   padding-top: 5%;
