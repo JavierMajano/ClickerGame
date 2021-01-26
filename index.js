@@ -8,7 +8,17 @@ const cost = document.querySelector('.cost');
 let score = 0;
 let autoB = 10;
 let autoPrice = 0;
+let autoClickTrack = 2000;
 
+function autoClicker(){
+
+  setInterval(function(){
+
+  cookie.click();
+  }, autoClickTrack)
+// autoClickTrack = autoClickTrack - 200;
+
+}
 
 function autoBuy(){
   if(score >= autoB ){
@@ -19,7 +29,7 @@ function autoBuy(){
    scoreScore.innerHTML = ` Clicks: ${score} `;
      autoB = autoB + 5;
      cost.innerHTML = `Cost: ${autoB} `;
-
+      autoClicker();
   }
   else{
     alert("You do not have enought clicks!");
