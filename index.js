@@ -6,6 +6,8 @@ const autoButton = document.querySelector('.auto');
 const cost = document.querySelector('.cost');
 const costMutiplier = document.querySelector('.costMutiplier')
 const clickerButton = document.querySelector('.Multiplier');
+const highScore = document.querySelector('.highScore');
+
 
 
 let score = 0;
@@ -15,58 +17,65 @@ let autoPrice = 0;
 let autoClickTrack = 2000;
 let clickers = 0;
 let clickerTrack = 0;
+var highscore = localStorage.getItem(".highScore");
 
-function autoClicker(){
+function autoClicker() {
 
-  setInterval(function(){
+  setInterval(function() {
 
-  cookie.click();
+    cookie.click();
   }, autoClickTrack)
-// autoClickTrack = autoClickTrack - 200;
+  // autoClickTrack = autoClickTrack - 200;
 
 }
 
-function updateStatus(){
+function updateStatus() {
   autoPrice++;
   autoClick.innerHTML = `Auto Click: ${autoPrice} `;
- score = score - autoB;
- scoreScore.innerHTML = ` Clicks: ${score} `;
-   autoB = autoB + 50;
-   cost.innerHTML = `Cost: ${autoB} `;
+  score = score - autoB;
+  scoreScore.innerHTML = ` Clicks: ${score} `;
+  autoB = autoB + 50;
+  cost.innerHTML = `Cost: ${autoB} `;
 
 }
-function autoBuy(){
-  if(score >= autoB ){
 
-      updateStatus();
-      autoClicker();
-  }
-  else{
+function autoBuy() {
+  if (score >= autoB) {
+
+    updateStatus();
+    autoClicker();
+  } else {
     alert("You do not have enought clicks!");
   }
 }
-function clickerMulti(){
-  if(score >= click ){
+
+function clickerMulti() {
+  if (score >= click) {
 
     clickerTrack++;
     clickMult.innerHTML = `Clciker Multiplier ${clickerTrack}x `;
-   score = score - click;
-   scoreScore.innerHTML = ` Clicks: ${score} `;
-     click = click + 10;
-     costMutiplier.innerHTML = `Cost: ${click} `;
-     clickers++;
+    score = score - click;
+    scoreScore.innerHTML = ` Clicks: ${score} `;
+    click = click + 10;
+    costMutiplier.innerHTML = `Cost: ${click} `;
+    clickers++;
 
-  }
-  else{
+  } else {
     alert("You do not have enought clicks!");
   }
 }
 
-function handleClick(){
- score++;
- score = score + clickers;
- scoreScore.innerHTML = ` Clicks: ${score} `;
-
+function handleClick() {
+  score++;
+  score = score + clickers;
+  scoreScore.innerHTML = ` Clicks: ${score} `;
+  if (highscore !== null) {
+    if (score > highscore) {
+      localStorage.setItem("highscore", score);
+    }
+  } else {
+    localStorage.setItem("highscore", score);
+  }
 
 }
 

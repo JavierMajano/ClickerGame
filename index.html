@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <title>Javier's Clicker Game</title>
   <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -16,45 +17,52 @@
     </div>
     <div class="score">
       Clicks: 0
-    </div>
 
+    </div>
+    <!-- <div class="highScore">
+      high Score: 0
+    </div> -->
     <div class="image">
       <img class="cookie" src="images/cookie.png" alt="Cookie Cl">
     </div>
 
   </div>
-  <div class="borderBox">
+  <div class="floatContainer">
 
 
-    <div class="ClickMultiplier">
-      Clicker Multiplier: 0
+    <div class="borderBox">
+
+
+      <div class="ClickMultiplier">
+        Clicker Multiplier: 0
+      </div>
+      <div class="button">
+
+        <button class="Multiplier" type="button" name="button">Buy</button>
+
+      </div>
+      <div class="costMutiplier">
+        Cost: 10
+      </div>
     </div>
-    <div class="button">
+    <div class="borderBox">
 
-      <button class="Multiplier" type="button" name="button">Buy</button>
+
+      <div class="autoClick">
+        Auto Click: 0
+      </div>
+      <div class="button">
+
+        <button class="auto" type="button" name="button">Buy</button>
+
+      </div>
+      <div class="cost">
+        Cost: 100
+      </div>
+
+
 
     </div>
-    <div class="costMutiplier">
-      Cost: 10
-    </div>
-  </div>
-  <div class="borderBox">
-
-
-    <div class="autoClick">
-      Auto Click: 0
-    </div>
-    <div class="button">
-
-      <button class="auto" type="button" name="button">Buy</button>
-
-    </div>
-    <div class="cost">
-      Cost: 100
-    </div>
-
-
-
   </div>
   </div>
   <script src="index.js" type="text/javascript">
